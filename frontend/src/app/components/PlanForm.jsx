@@ -94,7 +94,6 @@ export default function PlanForm({ onClose, onPlanCreated }) {
               />
             </div>
 
-            {/* Source & Destination */}
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="text-sm text-gray-700 font-medium">
@@ -123,7 +122,6 @@ export default function PlanForm({ onClose, onPlanCreated }) {
               </div>
             </div>
 
-            {/* Travel Days & Type */}
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="text-sm text-gray-700 font-medium">
@@ -157,7 +155,6 @@ export default function PlanForm({ onClose, onPlanCreated }) {
               </div>
             </div>
 
-            {/* Budget */}
             <div>
               <label className="text-sm text-gray-700 font-medium">
                 Budget (₹)
@@ -173,11 +170,10 @@ export default function PlanForm({ onClose, onPlanCreated }) {
             </div>
           </div>
 
-          {/* Buttons */}
           <div className="flex justify-end gap-3 mt-8">
             <button
               onClick={onClose}
-              className="px-5 py-2.5 text-gray-600 rounded-lg border border-gray-200 hover:bg-gray-100 transition-all duration-200"
+              className="px-5 py-2.5 cursor-pointer text-gray-600 rounded-lg border border-gray-200 hover:bg-gray-100 transition-all duration-200"
             >
               Cancel
             </button>
@@ -185,7 +181,7 @@ export default function PlanForm({ onClose, onPlanCreated }) {
               whileTap={{ scale: 0.97 }}
               onClick={handleSubmit}
               disabled={loading}
-              className={`px-6 py-2.5 rounded-lg text-white font-medium shadow-md transition-all duration-300 ${
+              className={`px-6 py-2.5 rounded-lg cursor-pointer text-white font-medium shadow-md transition-all duration-300 ${
                 loading
                   ? "bg-blue-400 cursor-not-allowed"
                   : "bg-blue-600 hover:bg-blue-700"

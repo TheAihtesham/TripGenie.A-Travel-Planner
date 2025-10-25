@@ -14,14 +14,13 @@ export default function PlanCard({ plan }) {
   };
 
   const fallbackImage = (type = "travel") =>
-    `https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=${encodeURIComponent(type)}`; // Lighter fallback background
+    `https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=${encodeURIComponent(type)}`; 
 
-  // --- Design Enhancements: Color and Shadow Adjustment ---
+  
   return (
     <div className="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 mb-10 hover:shadow-2xl transition-all duration-500 overflow-hidden">
       {/* Header */}
       <div className="mb-6 pb-4 border-b border-gray-100">
-        {/* Lighter primary color (text-indigo-600) and improved hierarchy */}
         <h2 className="text-3xl font-extrabold text-indigo-700 mb-1 leading-tight">{name}</h2>
         
         <p className="text-gray-500 text-base font-medium">
@@ -29,7 +28,6 @@ export default function PlanCard({ plan }) {
         </p>
 
         <div className="mt-3 flex items-center flex-wrap gap-3 text-sm">
-          {/* Lighter, softer badge colors */}
           <span className="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wider">
             {travelType.charAt(0).toUpperCase() + travelType.slice(1)} Trip
           </span>
@@ -58,7 +56,6 @@ export default function PlanCard({ plan }) {
             {hotels.map((hotel, idx) => (
               <div
                 key={idx}
-                // Use a subtle white background and sharper border radius
                 className="bg-white border border-gray-100 rounded-xl p-4 shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-0.5"
               >
                 <img
@@ -99,13 +96,13 @@ export default function PlanCard({ plan }) {
             {itinerary.map((day, idx) => (
               <div
                 key={idx}
-                // Subtle shadow and lighter background on the card
-                className="bg-gray-50 border border-gray-200 rounded-xl shadow-sm overflow-hidden"
+                
+                className="bg-gray-50 cursor-pointer border border-gray-200 rounded-xl shadow-sm overflow-hidden"
               >
-                {/* Header: Increased padding for better tap target and clear separation */}
+               
                 <button
                   onClick={() => toggleDay(idx)}
-                  className="w-full flex justify-between items-center p-4 md:p-5 text-left bg-white hover:bg-gray-100 transition-colors duration-300"
+                  className="w-full flex justify-between cursor-pointer items-center p-4 md:p-5 text-left bg-white hover:bg-gray-100 transition-colors duration-300"
                 >
                   <h4 className="text-gray-800 font-extrabold text-lg flex items-center gap-3">
                      <span className="bg-indigo-50 text-indigo-700 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shadow-sm">
@@ -160,7 +157,7 @@ export default function PlanCard({ plan }) {
                                 <p className="text-sm text-gray-500 mt-0.5 mb-2 line-clamp-2">
                                   {place.PlaceDetails}
                                 </p>
-                                {/* Lighter, clearer badge for information */}
+                            
                                 <span className="text-xs font-medium bg-green-50 text-green-700 px-2.5 py-0.5 rounded-full">
                                   Ideal Time: {place.BestTime || "Anytime"}
                                 </span>
