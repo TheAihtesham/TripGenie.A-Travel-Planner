@@ -164,13 +164,3 @@ export const getPlans = async (req, res) => {
   }
 };
 
-export const getPlanById = async (req, res) => {
-  try {
-    const plan = await Plan.findById(req.params.id);
-    if (!plan) return res.status(404).json({ message: "Plan not found" });
-    res.json(plan);
-  } catch (error) {
-    console.error("Error fetching plan by ID:", error);
-    res.status(500).json({ message: error.message });
-  }
-};
